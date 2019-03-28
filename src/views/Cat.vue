@@ -36,7 +36,8 @@
         choisiCeChat (cat) {
             let indexWinner = this.cats.findIndex(c => c.id === cat.id)
             let indexLoser = this.cats.findIndex(c => c.id !== cat.id)
-            fetch('http://localhost:59486/cats', {
+            // fetch('http://localhost:59486/cats', {
+            fetch('#{urlApi}#/cats', {
                 mode: 'cors',
                 headers: { 'Content-Type':'application/json' },
                 method : 'PATCH',
@@ -45,11 +46,12 @@
                     loser : this.cats[indexLoser]
                 })
             })
-            this.changeCat()
+            .then( () => this.changeCat() )
         },
         changeCat () {
             this.loading = true
-            fetch('http://localhost:59486/cats/random', {
+            // fetch('http://localhost:59486/cats/random', {
+            fetch('#{urlApi}#/cats/random', {
                         mode: 'cors',
                     })
                     .then(res => res.json())
@@ -88,7 +90,10 @@
             img {
 
                 display: block;
-                width: 100%;
+                max-width:800px;
+                max-height:800px;
+                width: auto;
+                height: auto;
             }
         }
     }

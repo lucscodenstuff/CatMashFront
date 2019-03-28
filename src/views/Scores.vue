@@ -33,7 +33,8 @@
       methods: {
         displayCat () {
             this.loading = true
-            fetch('http://localhost:59486/cats', {
+            // fetch('http://localhost:59486/cats', {
+            fetch('#{urlApi}#/cats', {
                         mode: 'cors',
                     })
                     .then(res => res.json())
