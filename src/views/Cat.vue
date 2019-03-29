@@ -13,7 +13,7 @@
 </pre>
 <div v-else>Pas de chat</div>
 
-<button @click="changeCat">Change</button>
+<button @click="$router.push('scores')">Scores Board</button>
 </div>
 </template>
   
